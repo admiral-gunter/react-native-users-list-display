@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { View, Text, Image, StyleSheet, Animated, ImageBackground } from 'react-native';
+import { Ionicons } from '@expo/vector-icons';
+
 
 const AboutPage = () => {
   const [animation] = useState(new Animated.Value(0));
@@ -43,8 +45,20 @@ const AboutPage = () => {
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis efficitur interdum libero, nec fringilla velit feugiat sit amet. Vivamus vitae massa eget urna efficitur gravida. Integer pharetra, libero eu cursus convallis, diam nisl placerat felis, auctor posuere elit ipsum vel risus. Morbi in sapien purus. Sed in nunc risus. Etiam facilisis tincidunt quam, sit amet tempor nibh dapibus ac. Nunc eleifend, sem ut aliquet interdum, mauris neque facilisis dui, ut faucibus justo urna ut purus. Nunc in ligula eu lectus consectetur sagittis. Nullam tristique odio at sem sollicitudin, in elementum ligula luctus. Mauris eu diam pulvinar, consequat enim eget, fermentum metus. Pellentesque finibus dapibus velit sed aliquam. Proin id nunc vel risus scelerisque consectetur.
         </Text>
 
-        <View>
+        <Text style={{
+            fontSize:18,
+            fontWeight:'bold',
+            marginVertical:5
+        }}>
+            Follow Us
+        </Text>
 
+        <View
+       style={{justifyContent:'space-evenly',flexDirection:'row', gap:10 }}
+        >
+            <Ionicons  name='logo-facebook' size={30} color='blue' />
+            <Ionicons  name='logo-twitter' size={30} color='#1DA1F2' />
+            <Ionicons  name='logo-instagram' size={30} color='#8a3ab9' />
         </View>
       </Animated.View>
     </View>

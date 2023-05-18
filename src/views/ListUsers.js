@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import { View, Text, StyleSheet, ScrollView, FlatList, ActivityIndicator } from 'react-native';
 import Card from '../components/Card';
+import { API_URL } from '../prefix/index';
 
 const ListUsers = ({navigation}) => {
 
@@ -14,7 +15,7 @@ const ListUsers = ({navigation}) => {
 
     const fetchData = async () => {
       try {
-        const response = await fetch('https://reqres.in/api/users');
+        const response = await fetch(API_URL+'users');
         const jsonData = await response.json();
         setData(jsonData['data']);
         setLoading(false);
