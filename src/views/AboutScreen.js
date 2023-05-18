@@ -53,11 +53,7 @@ const AboutPage = () => {
               }}
             >
               <View
-                style={{
-                  flex:1,
-                  alignItems:'center',
-                  marginVertical:20
-                }}
+                style={styles.contactConatiner}
               >
 
                 <Ionicons  name='location-outline' size={30} color='#FFA500' />
@@ -75,11 +71,7 @@ const AboutPage = () => {
               </View>
 
               <View
-                style={{
-                  flex:1,
-                  alignItems:'center',
-                  marginVertical:20
-                }}
+               style={styles.contactConatiner}
               >
 
                 <Ionicons  name='call-outline' size={30} color='green' />
@@ -91,11 +83,7 @@ const AboutPage = () => {
               </View>
 
               <View
-                style={{
-                  flex:1,
-                  alignItems:'center',
-                  marginVertical:20
-                }}
+               style={styles.contactConatiner}
               >
 
                 <Ionicons  name='time-outline' size={30} color='red' />
@@ -171,6 +159,11 @@ const styles = StyleSheet.create({
     textAlign: 'justify',
     color: '#777777',
   },
+  contactConatiner:{
+    flex:1,
+    alignItems:'center',
+    marginVertical:20
+  }
 });
 
 export default AboutPage;
