@@ -1,8 +1,26 @@
-import React from 'react';
-import { View, Text, StyleSheet, Image } from 'react-native';
+import React, { useState } from 'react';
+import { View, Text, StyleSheet, Image, TouchableHighlight } from 'react-native';
 
-const Card = ({  imgUrl, firstName, lastName, email }) => {
+const Card = ({  navigation,id,imgUrl, firstName, lastName, email }) => {
+
+  const [isPressed, setIsPressed] = useState(false);
+
+  const handlePressIn = () => {
+    setIsPressed(true);
+  };
+
+  const handlePressOut = () => {
+    setIsPressed(false);
+  };
+
   return (
+  <TouchableHighlight
+    onPress={() => navigation.navigate('Details', { id })}
+    onPressIn={handlePressIn}
+    onPressOut={handlePressOut}
+    underlayColor="transparent" // No underlay color
+    style={styles.buttonContainer}
+  >
     <View style={styles.container}>
         <Image 
             style={styles.image}
@@ -13,6 +31,7 @@ const Card = ({  imgUrl, firstName, lastName, email }) => {
             <Text style={styles.title}>{email}</Text>
         </View>
     </View>
+    </TouchableHighlight>
   );
 };
 

@@ -2,7 +2,7 @@ import React, {useEffect, useState} from 'react';
 import { View, Text, StyleSheet, ScrollView, FlatList, ActivityIndicator } from 'react-native';
 import Card from '../components/Card';
 
-const ListUsers = () => {
+const ListUsers = ({navigation}) => {
 
     const [data, setData] = useState([]);
 
@@ -32,7 +32,7 @@ const ListUsers = () => {
   </View>)
   }
   return (
-    <View>
+    <View style={{backgroundColor:'white'}}>
       <Text style={{fontSize:20, fontWeight:'bold', textAlign:'center'}}>List Users</Text>
     <ScrollView contentContainerStyle={styles.container}>
       <View style={styles.listContainer}>
@@ -40,7 +40,9 @@ const ListUsers = () => {
           data.map((item, index)=> {
             return(
               <Card
+              navigation={navigation}
                 key={index}
+                id={item.id}
                 email={item.email}
                 imgUrl={item.avatar}
                 firstName={item.first_name}
