@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { View, Text, Image, StyleSheet, Animated, ImageBackground } from 'react-native';
+import { View, Text, Image, StyleSheet, Animated, ImageBackground, ScrollView } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 
 
@@ -37,31 +37,100 @@ const AboutPage = () => {
         source={{uri:'https://i.pngimg.me/thumb/f/720/03651be75a0f4b308138.jpg'}}
         style={{flex:1, height:'50%'}}
     >
-    <View style={styles.container} >
-      <Animated.View style={[styles.contentContainer, animatedStyles]}>
-        <Image source={{uri:'https://www.its.ac.id/wp-content/uploads/2021/10/logo-kominfo-transparent.png'}} style={styles.profileImage} />
-        <Text style={styles.name}>About Us</Text>
-        <Text style={styles.description}>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis efficitur interdum libero, nec fringilla velit feugiat sit amet. Vivamus vitae massa eget urna efficitur gravida. Integer pharetra, libero eu cursus convallis, diam nisl placerat felis, auctor posuere elit ipsum vel risus. Morbi in sapien purus. Sed in nunc risus. Etiam facilisis tincidunt quam, sit amet tempor nibh dapibus ac. Nunc eleifend, sem ut aliquet interdum, mauris neque facilisis dui, ut faucibus justo urna ut purus. Nunc in ligula eu lectus consectetur sagittis. Nullam tristique odio at sem sollicitudin, in elementum ligula luctus. Mauris eu diam pulvinar, consequat enim eget, fermentum metus. Pellentesque finibus dapibus velit sed aliquam. Proin id nunc vel risus scelerisque consectetur.
-        </Text>
+      <ScrollView>
+        <View style={styles.container} >
+          <Animated.View style={[styles.contentContainer, animatedStyles]}>
+            <Image source={{uri:'https://www.its.ac.id/wp-content/uploads/2021/10/logo-kominfo-transparent.png'}} style={styles.profileImage} />
+            <Text style={styles.name}>About Us</Text>
+            <Text style={styles.description}>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis efficitur interdum libero, nec fringilla velit feugiat sit amet.
+            </Text>
 
-        <Text style={{
-            fontSize:18,
-            fontWeight:'bold',
-            marginVertical:5
-        }}>
-            Follow Us
-        </Text>
+            <View
+              style={{
+                flex:1,
+                justifyContent:'center'
+              }}
+            >
+              <View
+                style={{
+                  flex:1,
+                  alignItems:'center',
+                  marginVertical:20
+                }}
+              >
 
-        <View
-       style={{justifyContent:'space-evenly',flexDirection:'row', gap:10 }}
-        >
-            <Ionicons  name='logo-facebook' size={30} color='blue' />
-            <Ionicons  name='logo-twitter' size={30} color='#1DA1F2' />
-            <Ionicons  name='logo-instagram' size={30} color='#8a3ab9' />
+                <Ionicons  name='location-outline' size={30} color='#FFA500' />
+                <Text style={{
+                  textAlign:'center',
+                }}>
+                  Jln. Margaciawi Km.10 Jawa Barat
+                </Text>
+                <Text style={{
+                  textAlign:'center',
+                  color:'lightblue'
+                }}>
+                  Open Map
+                </Text>
+              </View>
+
+              <View
+                style={{
+                  flex:1,
+                  alignItems:'center',
+                  marginVertical:20
+                }}
+              >
+
+                <Ionicons  name='call-outline' size={30} color='green' />
+                <Text style={{
+                  textAlign:'center',
+                }}>
+                  (0123) 456789
+                </Text>
+              </View>
+
+              <View
+                style={{
+                  flex:1,
+                  alignItems:'center',
+                  marginVertical:20
+                }}
+              >
+
+                <Ionicons  name='time-outline' size={30} color='red' />
+                <Text style={{
+                  textAlign:'center',
+                }}>
+                  Monday - Friday
+                </Text>
+                <Text style={{
+                  textAlign:'center',
+                }}>
+                  09.00 - 17.00
+                </Text>
+              </View>
+
+            </View>
+
+            <Text style={{
+                fontSize:18,
+                fontWeight:'bold',
+                marginVertical:5
+            }}>
+                Follow Us
+            </Text>
+
+            <View
+          style={{justifyContent:'space-evenly',flexDirection:'row', gap:10 }}
+            >
+                <Ionicons  name='logo-facebook' size={30} color='blue' />
+                <Ionicons  name='logo-twitter' size={30} color='#1DA1F2' />
+                <Ionicons  name='logo-instagram' size={30} color='#8a3ab9' />
+            </View>
+          </Animated.View>
         </View>
-      </Animated.View>
-    </View>
+      </ScrollView>
     </ImageBackground>
   );
 };
